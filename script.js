@@ -10,9 +10,9 @@ const getBooks = async (searchWord = "") => {
                 return book.title.toLowerCase().includes(searchWord)
             })
             console.log(match)
-            buildBooks(match)
+            displayBooks(match)
         } else {
-            buildBooks(books);
+            displayBooks(books);
         }
 
     } catch (err) {
@@ -22,7 +22,7 @@ const getBooks = async (searchWord = "") => {
 
 let rowNode = document.querySelector(".row");
 
-const buildBooks = (books) => {
+const displayBooks = (books) => {
     rowNode.innerHTML = '';
     setTimeout(function () {
         const cards = books
